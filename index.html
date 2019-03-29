@@ -72,6 +72,16 @@
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/28/myfirstblog/">php基础--面试基础题</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <p>PHP中几个输出函数echo，print()，print_r()，sprintf()，var_dump()的区别<br>1：echo：是语句不是函数，没有返回值，可输出多个变量值，不需要圆括号。不能输出数组和对象，只能打印简单类型(如int,string)。</p>
@@ -80,11 +90,8 @@
 <p>4：printf：是函数，把文字格式化以后输出（参看C语言）</p>
 <p>5：sprintf：是函数，跟printf相似，但不打印，而是返回格式化后的文字（该函数把格式化的字符串写入一个变量中，而不是输出来），其他的与printf一样。 </p>
 <p>6：var_dump()：函数，输出变量的内容、类型或字符串的内容、类型、长度。常用来调试,无返回值。可打印多个变量。</p>
-<p>7.var_export() :函数。可打印也可不打印。当第二个参数设置为true时不打印，而是返回格式化后的文字。可以像var_dump()一样判断变量的内容、类型、长度。与var_dump()不同的是其返回的表示,是合法的 PHP 代码,可以直接赋值给变量。例如：</p>
-<p>&lt;?php</p>
-<pre><code>$arr = array ( 1 , 2 , array ( &quot;apple&quot; , &quot;banana&quot; , &quot;orange&quot; )); 
-var_export ( $arr ); 
-</code></pre><p>?&gt;<br>程序输出：</p>
+<p>7.var_export() :函数。可打印也可不打印。当第二个参数设置为true时不打印，而是返回格式化后的文字。可以像var_dump()一样判断变量的内容、类型、长度。与var_dump()不同的是其返回的表示,是合法的 PHP 代码,可以直接赋值给变量。例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	     </span><br><span class="line">	<span class="variable">$arr</span> = array ( 1 , 2 , array ( <span class="string">"apple"</span> , <span class="string">"banana"</span> , <span class="string">"orange"</span> )); </span><br><span class="line">	var_export ( <span class="variable">$arr</span> ); </span><br><span class="line">	     </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>程序输出：</p>
 <pre><code>array (
   0 =&gt; 1,
   1 =&gt; 2,
@@ -110,12 +117,13 @@ var_export ( $arr );
     string(6) &quot;orange&quot;
   }
 </code></pre><p>}</p>
-<p>但是经过var_export()赋值后的变量却已经变为string类型，如果是数组，就不能再用键值对的形式去访问数组元素了。例如：<br>&lt;?php<br>    $arr = array ( 1 , 2 , array ( “apple” , “banana” , “orange” ));<br>    $s = var_export ( $arr,true );<br>    var_dump($s);<br>    echo ‘<br>‘ ;<br>    echo $s[0];<br>?&gt;<br>输出：<br>string(108) “array ( 0 =&gt; 1, 1 =&gt; 2, 2 =&gt; array ( 0 =&gt; ‘apple’, 1 =&gt; ‘banana’, 2 =&gt; ‘orange’, ), )”<br>a</p>
+<p>但是经过var_export()赋值后的变量却已经变为string类型，如果是数组，就不能再用键值对的形式去访问数组元素了。例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	<span class="variable">$arr</span> = array ( 1 , 2 , array ( <span class="string">"apple"</span> , <span class="string">"banana"</span> , <span class="string">"orange"</span> )); </span><br><span class="line">	<span class="variable">$s</span> = var_export ( <span class="variable">$arr</span>,<span class="literal">true</span> );</span><br><span class="line">	var_dump(<span class="variable">$s</span>); </span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$s</span>[0]; </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>输出：<br>string(108) “array ( 0 =&gt; 1, 1 =&gt; 2, 2 =&gt; array ( 0 =&gt; ‘apple’, 1 =&gt; ‘banana’, 2 =&gt; ‘orange’, ), )”<br>a</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/myfirstblog/" data-id="cjttquqbl0001pwkwoi47qhqv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/myfirstblog/" data-id="cjttr64pv000160kw8kgxqv7d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -160,7 +168,7 @@ var_export ( $arr );
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/hello-world/" data-id="cjttquqbb0000pwkwy8hn2og3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/hello-world/" data-id="cjttr64pl000060kwsjm7zroy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -201,7 +209,7 @@ var_export ( $arr );
       <ul>
         
           <li>
-            <a href="/2019/03/28/myfirstblog/">(no title)</a>
+            <a href="/2019/03/28/myfirstblog/">php基础--面试基础题</a>
           </li>
         
           <li>
