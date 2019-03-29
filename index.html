@@ -74,12 +74,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>日记。。。</p>
+        <p>PHP中几个输出函数echo，print()，print_r()，sprintf()，var_dump()的区别<br>1：echo：是语句不是函数，没有返回值，可输出多个变量值，不需要圆括号。不能输出数组和对象，只能打印简单类型(如int,string)。</p>
+<p>2：print：是语句不是函数，有返回值 1 ，只能输出一个变量，不需要圆括号。不能输出数组和对象，只能打印简单类型(如int,string)。</p>
+<p>3：print_r：是函数，可以打印复合类型，例如：stirng、int、float、array、object等，输出array时会用结构表示，而且可以通过print_r($str,true)来使print_r不输出而返回print_r处理后的值</p>
+<p>4：printf：是函数，把文字格式化以后输出（参看C语言）</p>
+<p>5：sprintf：是函数，跟printf相似，但不打印，而是返回格式化后的文字（该函数把格式化的字符串写入一个变量中，而不是输出来），其他的与printf一样。 </p>
+<p>6：var_dump()：函数，输出变量的内容、类型或字符串的内容、类型、长度。常用来调试,无返回值。可打印多个变量。</p>
+<p>7.var_export() :函数。可打印也可不打印。当第二个参数设置为true时不打印，而是返回格式化后的文字。可以像var_dump()一样判断变量的内容、类型、长度。与var_dump()不同的是其返回的表示,是合法的 PHP 代码,可以直接赋值给变量。例如：</p>
+<p>&lt;?php</p>
+<pre><code>$arr = array ( 1 , 2 , array ( &quot;apple&quot; , &quot;banana&quot; , &quot;orange&quot; )); 
+var_export ( $arr ); 
+</code></pre><p>?&gt;<br>程序输出：</p>
+<pre><code>array (
+  0 =&gt; 1,
+  1 =&gt; 2,
+  2 =&gt;array (
+    0 =&gt; &apos;apple&apos;,
+    1 =&gt; &apos;banana&apos;,
+    2 =&gt; &apos;orange&apos;,
+  ),
+)
+</code></pre><p>注意，上面的输出是合法的PHP代码。假如用var_dump()，则输出为：</p>
+<pre><code>array(3) {
+  [0]=&gt;
+  int(1)
+  [1]=&gt;
+  int(2)
+  [2]=&gt;
+  array(3) {
+    [0]=&gt;
+    string(5) &quot;apple&quot;
+    [1]=&gt;
+    string(6) &quot;banana&quot;
+    [2]=&gt;
+    string(6) &quot;orange&quot;
+  }
+</code></pre><p>}</p>
+<p>但是经过var_export()赋值后的变量却已经变为string类型，如果是数组，就不能再用键值对的形式去访问数组元素了。例如：<br>&lt;?php<br>    $arr = array ( 1 , 2 , array ( “apple” , “banana” , “orange” ));<br>    $s = var_export ( $arr,true );<br>    var_dump($s);<br>    echo “<br>“ ;<br>    echo $s[0];<br>?&gt;<br>输出：<br>string(108) “array ( 0 =&gt; 1, 1 =&gt; 2, 2 =&gt; array ( 0 =&gt; ‘apple’, 1 =&gt; ‘banana’, 2 =&gt; ‘orange’, ), )”<br>a</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/myfirstblog/" data-id="cjtsmt31v0001zgkwdstx7biq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/myfirstblog/" data-id="cjttqramd000000kwcivd5qen" class="article-share-link">Share</a>
       
       
     </footer>
@@ -124,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/hello-world/" data-id="cjtsmt31m0000zgkwxgdedivw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/hello-world/" data-id="cjttqran2000100kw34qjanq4" class="article-share-link">Share</a>
       
       
     </footer>
