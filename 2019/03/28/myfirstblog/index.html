@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Jackie-lt的奇幻空间">
 <meta property="og:description" content="PHP中几个输出函数echo，print()，print_r()，sprintf()，var_dump()的区别1：echo：是语句不是函数，没有返回值，可输出多个变量值，不需要圆括号。不能输出数组和对象，只能打印简单类型(如int,string)。 2：print：是语句不是函数，有返回值 1 ，只能输出一个变量，不需要圆括号。不能输出数组和对象，只能打印简单类型(如int,string)。 3">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-29T07:21:53.698Z">
+<meta property="og:updated_time" content="2019-03-29T07:27:00.200Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jackie-lt的奇幻空间">
 <meta name="twitter:description" content="PHP中几个输出函数echo，print()，print_r()，sprintf()，var_dump()的区别1：echo：是语句不是函数，没有返回值，可输出多个变量值，不需要圆括号。不能输出数组和对象，只能打印简单类型(如int,string)。 2：print：是语句不是函数，有返回值 1 ，只能输出一个变量，不需要圆括号。不能输出数组和对象，只能打印简单类型(如int,string)。 3">
@@ -112,12 +112,12 @@ var_export ( $arr );
     string(6) &quot;orange&quot;
   }
 </code></pre><p>}</p>
-<p>但是经过var_export()赋值后的变量却已经变为string类型，如果是数组，就不能再用键值对的形式去访问数组元素了。例如：<br>&lt;?php<br>    $arr = array ( 1 , 2 , array ( “apple” , “banana” , “orange” ));<br>    $s = var_export ( $arr,true );<br>    var_dump($s);<br>    echo “<br>“ ;<br>    echo $s[0];<br>?&gt;<br>输出：<br>string(108) “array ( 0 =&gt; 1, 1 =&gt; 2, 2 =&gt; array ( 0 =&gt; ‘apple’, 1 =&gt; ‘banana’, 2 =&gt; ‘orange’, ), )”<br>a</p>
+<p>但是经过var_export()赋值后的变量却已经变为string类型，如果是数组，就不能再用键值对的形式去访问数组元素了。例如：<br>&lt;?php<br>    $arr = array ( 1 , 2 , array ( “apple” , “banana” , “orange” ));<br>    $s = var_export ( $arr,true );<br>    var_dump($s);<br>    echo ‘<br>‘ ;<br>    echo $s[0];<br>?&gt;<br>输出：<br>string(108) “array ( 0 =&gt; 1, 1 =&gt; 2, 2 =&gt; array ( 0 =&gt; ‘apple’, 1 =&gt; ‘banana’, 2 =&gt; ‘orange’, ), )”<br>a</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/myfirstblog/" data-id="cjttqramd000000kwcivd5qen" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/myfirstblog/" data-id="cjttquqbl0001pwkwoi47qhqv" class="article-share-link">Share</a>
       
       
     </footer>
